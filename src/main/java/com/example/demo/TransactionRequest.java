@@ -2,12 +2,10 @@ package com.example.demo;
 
 
 public class TransactionRequest {
-    private int accountId;
     private TransactionType type;
     private double amount;
 
-    public TransactionRequest(int accountId, TransactionType type, double amount) {
-        this.accountId = accountId;
+    public TransactionRequest(TransactionType type, double amount) {
         this.type = type;
         this.amount = amount;
     }
