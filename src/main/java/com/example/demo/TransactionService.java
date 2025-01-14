@@ -37,8 +37,8 @@ public class TransactionService {
             TransactionType type = random.nextBoolean() ? TransactionType.DEPOSIT : TransactionType.WITHDRAWAL;
 
             double amount = type == TransactionType.DEPOSIT
-                    ? random.nextDouble() * 1000 // Deposit amounts up to $1000
-                    : -random.nextDouble() * 500; // Withdrawal amounts up to $500
+                    ? random.nextDouble() * 10// Deposit amounts up to $1000
+                    : -random.nextDouble() * 5; // Withdrawal amounts up to $500
 
             TransactionRequest transactionRequest = new TransactionRequest(type, Math.abs(amount));
 
