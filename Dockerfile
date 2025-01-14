@@ -1,14 +1,7 @@
-# Use an official OpenJDK runtime as a parent image
 FROM openjdk:17-jdk-slim
-
-# Set the working directory in the container
+RUN apt-get update && apt-get install -y curl && apt-get clean
 WORKDIR /app
-
-# Copy the JAR file from the local machine to the container
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose the port your application runs on
+COPY target/demo-0.0.1-SNAPSHOT.jar /app/demo-client.jar
+EXPOSE 8080
 EXPOSE 8081
-
-# Command to run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-Dserver.port=8080", "-jar", "/app/demo-client.jar"]
