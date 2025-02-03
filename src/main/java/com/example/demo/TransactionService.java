@@ -14,7 +14,7 @@ public class TransactionService {
     private final RestTemplate restTemplate;
     private final Random random = new Random();
 
-    @Value("${ACCOUNT_MANAGER_URL:http://localhost:8080}")
+    @Value("${ACCOUNT_MANAGER_URL:http://localhost:8090}")
     private String accountManagerUrl; // Base URL of the Account Manager application
 
     public TransactionService(RestTemplateBuilder restTemplateBuilder) {
